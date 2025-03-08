@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "a923c0c1-50da-48c0-994a-789bdd6fdf6b",
+		"name": "04.JobSeekerActions",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40277824"
+	},
+	"item": [
+		{
+			"name": "JobseekerLogin(token gen) Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"josh\",\r\n    \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Apply for job",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1bmVtcGxveWVkIiwiaWF0IjoxNzQxNDYyNjgxLCJleHAiOjE3NDE1NDkwODF9.AOF99R6ilg6VwOICBeQEb8TZ5BEXnhGiuMQ0oypuq2Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/jobseeker/19/apply?jobId=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"jobseeker",
+						"19",
+						"apply"
+					],
+					"query": [
+						{
+							"key": "jobId",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload Resume",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1bmVtcGxveWVkIiwiaWF0IjoxNzQxNDY0MjM1LCJleHAiOjE3NDE1NTA2MzV9.j5KBGqiqhh8MjiTkkMvQd9EcnX6nW9RRaFFN6nFYsD4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/jobseeker/19/resume?resumeLink=unemployed.pdf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"jobseeker",
+						"19",
+						"resume"
+					],
+					"query": [
+						{
+							"key": "resumeLink",
+							"value": "unemployed.pdf"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Applications",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "View Jobs",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
